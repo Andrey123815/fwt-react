@@ -1,32 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import SettingsBlock from "../SettingsBlock/SettingsBlock";
 import MainContentBlock from "../MainContentBlock/MainContentBlock";
-import {ISingleTheme, themes} from "../../configurations/ThemeConfigurations";
-
-import React, {Component} from 'react';
-
-interface Props {
-    name: string
-}
+import {ISingleTheme, ThemeContext, themes} from "../../configurations/ThemeConfigurations";
 
 interface States {
     theme: ISingleTheme
 }
 
-const ThemeContext = React.createContext('light');
+class App extends Component<{}, States> {
+    public toggleTheme: () => void;
 
-class App extends Component<Props, States> {
-    private readonly toggleTheme: () => void;
-
-    constructor(props) {
+    constructor(props: {}) {
         super(props);
 
-        this.state = {
-           theme: themes.dark,
-        };
-
         this.toggleTheme = () => {
+            // alert(this.state.theme === themes.dark);
             this.setState(state => ({
                 theme:
                     state.theme === themes.dark
@@ -34,14 +23,21 @@ class App extends Component<Props, States> {
                         : themes.dark,
             }));
         };
+
+        this.state = {
+           theme: themes.dark,
+        };
+
+        // this.toggleTheme = this.toggleTheme.bind(this);
     }
 
     render() {
+        const {theme} = this.state;
         return (
             <div className="App">
                 <header className="App-header">
-                    <ThemeContext.Provider value="dark">
-                        <SettingsBlock changeTheme={this.toggleTheme} />
+                    <ThemeContext.Provider value={{ theme, toggleTheme: this.toggleTheme }}>
+                        <SettingsBlock />
                         <MainContentBlock />
                     </ThemeContext.Provider>
                 </header>
@@ -49,7 +45,5 @@ class App extends Component<Props, States> {
         );
     }
 }
-
-App.contextType = ThemeContext;
 
 export default App;

@@ -1,27 +1,23 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import {ThemeContext, themes} from "../../configurations/ThemeConfigurations";
 
-interface Props {
-    changeTheme(): void
-}
-
-interface States {
-    name: string
-}
-
-class SettingsBlock extends Component<Props, States> {
-    constructor(props) {
-        super(props);
-    }
+class SettingsBlock extends Component<{}, {}> {
+    context!: React.ContextType<typeof ThemeContext>;
 
     render() {
+        const { theme, toggleTheme } = this.context;
         return (
             <div>
-                <img
+                <img width={100} height={100} src={theme === themes.dark
+                    ? "./brightness__switcher_white.svg"
+                    : "./brightness__switcher_black.svg"}
+                     alt="" onClick={toggleTheme}/>
             </div>
         );
     }
 }
+
+SettingsBlock.contextType = ThemeContext;
 
 export default SettingsBlock;
 

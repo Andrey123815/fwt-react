@@ -1,23 +1,18 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 interface Props {
-    name: string
+    name?: string
 }
 
 interface States {
-    name: string
+    name?: string
 }
 
 class MainContentBlock extends Component<Props, States> {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
-            <div>
-
+            <div style={{width: "100px", height: "100px"}}>
+                wefwfwefw
             </div>
         );
     }
