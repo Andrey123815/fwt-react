@@ -15,7 +15,6 @@ class App extends Component<{}, States> {
         super(props);
 
         this.toggleTheme = () => {
-            // alert(this.state.theme === themes.dark);
             this.setState(state => ({
                 theme:
                     state.theme === themes.dark
@@ -25,22 +24,27 @@ class App extends Component<{}, States> {
         };
 
         this.state = {
-           theme: themes.dark,
+            theme: themes.dark,
         };
+    }
 
-        // this.toggleTheme = this.toggleTheme.bind(this);
+    componentDidMount() {
+        // можно здесь сделать запрос на юзера
+        // можно здесь сделать запрос на адрес
+        // и передать через пропсы или HOC и передавать туда эти запросы в качестве selectedData
     }
 
     render() {
         const {theme} = this.state;
+        const appTheme = `app-${this.state.theme.themeName}-theme app-padding`;
         return (
-            <div className="App">
-                <header className="App-header">
+            <div className="app">
+                <div className={appTheme}>
                     <ThemeContext.Provider value={{ theme, toggleTheme: this.toggleTheme }}>
                         <SettingsBlock />
                         <MainContentBlock />
                     </ThemeContext.Provider>
-                </header>
+                </div>
             </div>
         );
     }

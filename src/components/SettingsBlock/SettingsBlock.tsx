@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import {ThemeContext, themes} from "../../configurations/ThemeConfigurations";
+import './SettingsBlock.css';
+import {ThemeContext} from "../../configurations/ThemeConfigurations";
 
 class SettingsBlock extends Component<{}, {}> {
     context!: React.ContextType<typeof ThemeContext>;
 
     render() {
         const { theme, toggleTheme } = this.context;
+        const switcherImg = `./brightness__switcher_${theme.themeName}-theme.svg`;
         return (
-            <div>
-                <img width={100} height={100} src={theme === themes.dark
-                    ? "./brightness__switcher_white.svg"
-                    : "./brightness__switcher_black.svg"}
+            <div className="setting-block">
+                <img width={70} height={70} src={switcherImg}
                      alt="" onClick={toggleTheme}/>
             </div>
         );

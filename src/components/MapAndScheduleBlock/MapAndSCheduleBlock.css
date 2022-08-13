@@ -1,0 +1,6 @@
+.schedule-and-map {
+    display: flex;
+    flex-direction: column;
+
+    width: 70%;
+}

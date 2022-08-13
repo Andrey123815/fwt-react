@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
+import './MainContentBlock.css';
+import GreetLine from "../GreetLine/GreetLine";
+import AddressLine from "../AddressLine/AddressLine";
+import MainFunctionalityBlock from "../MainFunctionalityBlock/MainFunctionalityBlock";
 
-interface Props {
-    name?: string
-}
-
-interface States {
-    name?: string
-}
-
-class MainContentBlock extends Component<Props, States> {
+class MainContentBlock extends Component<{}, {}> {
     render() {
         return (
-            <div style={{width: "100px", height: "100px"}}>
-                wefwfwefw
+            <div className="main-content-block">
+                <GreetLine />
+                <AddressLine />
+                <MainFunctionalityBlock />
             </div>
         );
     }
