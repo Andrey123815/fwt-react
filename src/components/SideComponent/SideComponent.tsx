@@ -3,11 +3,15 @@ import Menu from "../Menu/Menu";
 import News from "../News/News";
 import './SideComponent.css';
 
-class SideComponent extends Component<{}, {}> {
+interface Props {
+    menuItemClick: (e: React.MouseEvent<HTMLElement>) => void
+}
+
+class SideComponent extends Component<Props, {}> {
     render() {
         return (
             <div className="side-component">
-                <Menu />
+                <Menu menuItemClick={this.props.menuItemClick}/>
                 <News />
             </div>
         );

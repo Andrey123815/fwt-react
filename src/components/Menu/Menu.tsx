@@ -2,29 +2,34 @@ import React, {Component} from 'react';
 import MenuItem from "../MenuItem/MenuItem";
 import './Menu.css';
 
-// interface MenuItemStates {
-//     freeTeams: boolean,
-//     createTeam: boolean,
-//     cancellation: boolean,
-//     mySchedule: boolean
-// }
+interface Props {
+    menuItemClick: (e: React.MouseEvent<HTMLElement>) => void
+}
 
 const menuItems = [
-    'Найти свободные команды',
-    'Создать команду и забронировать площадку',
-    'Отмена бронирования или перенос времени',
-    'Мое расписание',
+    {
+        text: 'Найти свободные команды',
+        shortKey: "freeTeam"
+    },
+    {
+        text: 'Создать команду и забронировать площадку',
+        shortKey: "createTeam"
+    },
+    {
+        text: 'Отмена бронирования или перенос времени',
+        shortKey: "cancellation"
+    },
+    {
+        text: 'Мое расписание',
+        shortKey: "mySchedule"
+    },
 ];
 
-class Menu extends Component<{}, {}> {
-    constructor(props: Readonly<any>) {
-        super(props);
-    }
-
+class Menu extends Component<Props, {}> {
     render() {
         const menu = menuItems.map((item) =>
             <div>
-                <MenuItem key={item} menuPoint={item} />
+                <MenuItem id={item.shortKey} onClick={this.props.menuItemClick} key={item.text} menuPoint={item.text} />
             </div>
         );
         return (

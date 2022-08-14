@@ -18,25 +18,36 @@ interface States {
     schedulePoints: ISchedulePoint[]
 }
 
-class Schedule extends Component<{}, States> {
-    constructor(props: Readonly<any>) {
+interface Props {
+    onlyFreeTeams?: boolean
+}
+
+class Schedule extends Component<Props, States> {
+    constructor(props: Readonly<Props>) {
         super(props);
         this.state = {
             schedulePoints: []
         };
     }
 
+    static defaultProps: Partial<Props>;
+
     static contextType = UserContext;
     context!: Readonly<IUserContext>;
 
     render() {
         const {schedule} = this.context.user;
-        const schedulePointsToRender = schedule.map((point) =>
+        const schedulePointsToRender = schedule
+            .filter(point => this.props.onlyFreeTeams ? point.membersCountNow !== point.membersCountNeed : true)
+            .map((point) =>
             <SchedulePoint point={point} />
         )
+        const schedulePreview = this.props.onlyFreeTeams
+            ? "Расписание свободных команд"
+            : "Ваше расписание на ближайшее время";
         return (
             <div className="schedule">
-                <div className="schedule__preview">Ваше расписание на ближайшее время</div>
+                <div className="schedule__preview">{schedulePreview}</div>
                 <table>
                     <tr>
                         <th>День недели</th>
@@ -51,6 +62,10 @@ class Schedule extends Component<{}, States> {
             </div>
         );
     }
+}
+
+Schedule.defaultProps = {
+    onlyFreeTeams: false
 }
 
 export default Schedule;
