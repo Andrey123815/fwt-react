@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import Menu from "../Menu/Menu";
 import News from "../News/News";
+import './SideComponent.css';
 
-class MenuAndNewsBlock extends Component<{}, {}> {
+class SideComponent extends Component<{}, {}> {
     render() {
         return (
-            <div style={{maxWidth: "490px", maxHeight: "840px"}}>
+            <div className="side-component">
                 <Menu />
                 <News />
             </div>
@@ -13,4 +14,4 @@ class MenuAndNewsBlock extends Component<{}, {}> {
     }
 }
 
-export default MenuAndNewsBlock;
+export default SideComponent;

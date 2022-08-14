@@ -8,9 +8,12 @@ class AddressLine extends Component<{}, {}> {
 
     render() {
         const user = this.context.user;
+        let addressLineContent = user.address.street === ''
+            ? user.address.city
+            : `Ваш адрес: г.${user.address.city}, ул.${user.address.street}, ${user.address.house}`
         return (
             <div className="address-line">
-                Ваш адрес: г.{user.address.city}, ул.{user.address.street}, {user.address.house}
+                {addressLineContent}
             </div>
         );
     }

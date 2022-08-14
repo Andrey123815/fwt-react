@@ -7,10 +7,6 @@ interface Props {
 }
 
 class NewsPost extends Component<Props, {}> {
-    // constructor(props: Readonly<Props>) {
-    //     super(props);
-    // }
-
     render() {
         const {booking, player, dateTime, team, street} = this.props.post;
         let messagePart = booking ? 'забронировал площадку' : 'отменил бронирование площадки';

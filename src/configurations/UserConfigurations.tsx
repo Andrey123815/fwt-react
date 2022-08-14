@@ -18,9 +18,9 @@ export const defaultUser: ISingleUser = {
     nickname: "Player",
     rank: "Новичок",
     address: {
-        city: "Moscow",
-        street: "Fdw",
-        house: "4"
+        city: "Для заполнения адреса перейдите к карте",
+        street: "",
+        house: ""
     },
     schedule: [],
 };

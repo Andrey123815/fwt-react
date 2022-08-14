@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './News.css';
 import NewsPost from "../NewsPost/NewsPost";
+import newsData from '../../dataSource/news.json';
 
 export interface INews {
     dateTime: string,
@@ -24,80 +25,7 @@ class News extends Component<{}, States> {
 
     componentDidMount() {
         // Запрос
-        const newsData = [
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: true
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: true
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-            {
-                dateTime: '11.07 12:00',
-                player: 'MavelTrip',
-                team: 'TropRetto',
-                street: 'Крымская, 4',
-                booking: false,
-            },
-
-        ]
-        this.setState({ news: newsData });
+        this.setState({ news: newsData.news });
     }
 
     render() {

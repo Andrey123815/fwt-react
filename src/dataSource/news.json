@@ -1,0 +1,74 @@
+{
+    "news": [
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking":true
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking":false
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": true
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": false
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": false
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": false
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": false
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": false
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": false
+        },
+        {
+            "dateTime": "11.07 12:00",
+            "player": "MavelTrip",
+            "team": "TropRetto",
+            "street": "Крымская, 4",
+            "booking": false
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import SettingsBlock from "../SettingsBlock/SettingsBlock";
-import MainContentBlock from "../MainContentBlock/MainContentBlock";
+import ContentBlock from "../ContentBlock/ContentBlock";
 import {ISingleTheme, themes} from "../../configurations/ThemeConfigurations";
 import {ThemeContext} from "../../configurations/ThemeConfigurations";
 import {ISingleUser, UserContext} from "../../configurations/UserConfigurations";
@@ -56,7 +56,7 @@ class App extends Component<{}, States> {
                     <ThemeContext.Provider value={{ theme, toggleTheme: this.toggleTheme }}>
                         <UserContext.Provider value={{ user: userData, updateUserInfo: this.updateUserInfo }}>
                             <SettingsBlock />
-                            <MainContentBlock />
+                            <ContentBlock />
                         </UserContext.Provider>
                     </ThemeContext.Provider>
                 </div>

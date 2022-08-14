@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import GreetLine from "../GreetLine/GreetLine";
 import AddressLine from "../AddressLine/AddressLine";
-import './UpLine.css';
+import './UpInfoLine.css';
 import {IUserContext, UserContext} from "../../configurations/UserConfigurations";
 
-class UpLine extends Component<{}, {}> {
+class UpInfoLine extends Component<{}, {}> {
     context!: Readonly<IUserContext>;
 
     render() {
@@ -27,6 +27,6 @@ class UpLine extends Component<{}, {}> {
     }
 }
 
-UpLine.contextType = UserContext;
+UpInfoLine.contextType = UserContext;
 
-export default UpLine;
+export default UpInfoLine;

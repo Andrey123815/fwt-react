@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import SchedulePoint from "../SchedulePoint/SchedulePoint";
-import './PlayerSchedule.css';
+import './Schedule.css';
 import {IUserContext, UserContext} from "../../configurations/UserConfigurations";
 
 export interface ISchedulePoint {
@@ -18,7 +18,7 @@ interface States {
     schedulePoints: ISchedulePoint[]
 }
 
-class PlayerSchedule extends Component<{}, States> {
+class Schedule extends Component<{}, States> {
     constructor(props: Readonly<any>) {
         super(props);
         this.state = {
@@ -35,19 +35,22 @@ class PlayerSchedule extends Component<{}, States> {
             <SchedulePoint point={point} />
         )
         return (
-            <table>
-                <tr>
-                    <th>День недели</th>
-                    <th>Дата матча</th>
-                    <th>Продолжительность матча</th>
-                    <th>Местоположения поля</th>
-                    <th>Команда</th>
-                    <th>Состав</th>
-                </tr>
-                {schedulePointsToRender}
-            </table>
+            <div className="schedule">
+                <div className="schedule__preview">Ваше расписание на ближайшее время</div>
+                <table>
+                    <tr>
+                        <th>День недели</th>
+                        <th>Дата матча</th>
+                        <th>Продолжительность матча</th>
+                        <th>Местоположения поля</th>
+                        <th>Команда</th>
+                        <th>Состав</th>
+                    </tr>
+                    {schedulePointsToRender}
+                </table>
+            </div>
         );
     }
 }
 
-export default PlayerSchedule;
+export default Schedule;

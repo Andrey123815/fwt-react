@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ISchedulePoint} from "../PlayerSchedule/PlayerSchedule";
+import {ISchedulePoint} from "../Schedule/Schedule";
 import {getFormattedDate, getMatchDuration, getWeekDay} from "../../libraries/dateLibrary";
 
 interface Props {
