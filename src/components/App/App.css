@@ -1,5 +1,6 @@
 .app {
   text-align: center;
+  overflow: hidden;
 }
 
 .app-dark-theme {
@@ -27,4 +28,6 @@
 
   padding: 0 20px;
   border: none;
+
+  max-height: 100vh;
 }

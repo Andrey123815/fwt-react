@@ -5,7 +5,7 @@ import News from "../News/News";
 class MenuAndNewsBlock extends Component<{}, {}> {
     render() {
         return (
-            <div style={{maxWidth: "490px"}}>
+            <div style={{maxWidth: "490px", maxHeight: "840px"}}>
                 <Menu />
                 <News />
             </div>

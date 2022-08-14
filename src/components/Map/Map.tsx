@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {IThemeContext, ThemeContext} from "../../configurations/ThemeConfigurations";
 import './Map.css';
+import {IThemeContext, ThemeContext} from "../../configurations/ThemeConfigurations";
 
 class Map extends Component<{}, {}> {
     static contextType = ThemeContext;

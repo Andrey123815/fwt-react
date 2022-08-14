@@ -20,7 +20,7 @@ class GreetLine extends Component<{}, {}> {
     render() {
         return (
             <div className="greet-line">
-                Welcome to the FOOTBALL WORLD TEAM, {this.user}!
+                Welcome to the Football World Team, {this.user}!
             </div>
         );
     }

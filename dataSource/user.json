@@ -1,0 +1,66 @@
+{
+    "nickname": "Fartaaar",
+    "rank": "Ветеран",
+    "team": "Vortankier",
+    "address": {
+        "city": "Moscow",
+        "street": "Fdw",
+        "house": "4"
+    },
+    "schedule": [
+        {
+            "date": "2022, 1, 14",
+            "startTime": "9, 0, 0, 0",
+            "finishTime": "11, 0, 0, 0",
+            "place": "г.Раменское, ул.Крымская, дом 10",
+            "team": "Favorite",
+            "membersCountNow": 1,
+            "membersCountNeed": 6
+        },
+        {
+            "date": "2022, 1, 14",
+            "startTime": "9, 0, 0, 0",
+            "finishTime": "11, 0, 0, 0",
+            "place": "г.Раменское, ул.Крымская, дом 10",
+            "team": "Favorite",
+            "membersCountNow": 2,
+            "membersCountNeed": 6,
+        },
+        {
+            "date": "2022, 1, 14",
+            "startTime": "9, 0, 0, 0",
+            "finishTime": "11, 0, 0, 0",
+            "place": "г.Раменское, ул.Крымская, дом 10",
+            "team": "Favorite",
+            "membersCountNow": 3,
+            "membersCountNeed": 6
+        },
+        {
+            "date": "2022, 1, 14",
+            "startTime": "9, 0, 0, 0",
+            "finishTime": "11, 0, 0, 0",
+            "place": "г.Раменское, ул.Крымская, дом 10",
+            "team": "Favorite",
+            "membersCountNow": 4,
+            "membersCountNeed": 6
+        },
+        {
+            "date": "2022, 1, 14",
+            "startTime": "9, 0, 0, 0",
+            "finishTime": "11, 0, 0, 0",
+            "place": "г.Раменское, ул.Крымская, дом 10",
+            "team": "Favorite",
+            "membersCountNow": 5,
+            "membersCountNeed": 6
+        },
+        {
+            "date": "2022, 1, 14",
+            "startTime": "9, 0, 0, 0",
+            "finishTime": "11, 0, 0, 0",
+            "place": "г.Раменское, ул.Крымская, дом 10",
+            "team": "Favorite",
+            "membersCountNow": 6,
+            "membersCountNeed": 6
+        }
+    ]
+}

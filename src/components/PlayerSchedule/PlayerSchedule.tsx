@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import SchedulePoint from "../SchedulePoint/SchedulePoint";
 import './PlayerSchedule.css';
-import {IThemeContext, ThemeContext} from "../../configurations/ThemeConfigurations";
 
 export interface ISchedulePoint {
     date: string,
     startTime: string,
     finishTime: string,
     place: string,
+    team: string,
+    membersCountNow: number,
+    membersCountNeed: number,
 }
 
 
@@ -23,9 +25,6 @@ class PlayerSchedule extends Component<{}, States> {
         };
     }
 
-    static contextType = ThemeContext;
-    context!: Readonly<IThemeContext>;
-
     componentDidMount() {
         // Запрос
         const schedulePointsData = [
@@ -34,24 +33,54 @@ class PlayerSchedule extends Component<{}, States> {
                 startTime: '9, 0, 0, 0',
                 finishTime: '11, 0, 0, 0',
                 place: 'г.Раменское, ул.Крымская, дом 10',
+                team: 'Favorite',
+                membersCountNow: 1,
+                membersCountNeed: 6,
             },
             {
                 date: '2022, 1, 14',
                 startTime: '9, 0, 0, 0',
                 finishTime: '11, 0, 0, 0',
                 place: 'г.Раменское, ул.Крымская, дом 10',
+                team: 'Favorite',
+                membersCountNow: 2,
+                membersCountNeed: 6,
             },
             {
                 date: '2022, 1, 14',
                 startTime: '9, 0, 0, 0',
                 finishTime: '11, 0, 0, 0',
                 place: 'г.Раменское, ул.Крымская, дом 10',
+                team: 'Favorite',
+                membersCountNow: 3,
+                membersCountNeed: 6,
             },
             {
                 date: '2022, 1, 14',
                 startTime: '9, 0, 0, 0',
                 finishTime: '11, 0, 0, 0',
                 place: 'г.Раменское, ул.Крымская, дом 10',
+                team: 'Favorite',
+                membersCountNow: 4,
+                membersCountNeed: 6,
+            },
+            {
+                date: '2022, 1, 14',
+                startTime: '9, 0, 0, 0',
+                finishTime: '11, 0, 0, 0',
+                place: 'г.Раменское, ул.Крымская, дом 10',
+                team: 'Favorite',
+                membersCountNow: 5,
+                membersCountNeed: 6,
+            },
+            {
+                date: '2022, 1, 14',
+                startTime: '9, 0, 0, 0',
+                finishTime: '11, 0, 0, 0',
+                place: 'г.Раменское, ул.Крымская, дом 10',
+                team: 'Favorite',
+                membersCountNow: 6,
+                membersCountNeed: 6,
             },
         ];
         this.setState({
@@ -63,8 +92,6 @@ class PlayerSchedule extends Component<{}, States> {
         const schedulePointsToRender = this.state.schedulePoints.map((point) =>
             <SchedulePoint point={point} />
         )
-        // const {theme} = this.context;
-        // const scheduleStyles = `player-schedule player-schedule_${theme.themeName}-theme`;
         return (
             <table>
                 <tr>
@@ -72,8 +99,8 @@ class PlayerSchedule extends Component<{}, States> {
                     <th>Дата матча</th>
                     <th>Продолжительность матча</th>
                     <th>Местоположения поля</th>
-                    {/*<th>Время до матча</th>*/}
-                    <th>Подтвердить заявку</th>
+                    <th>Команда</th>
+                    <th>Состав</th>
                 </tr>
                 {schedulePointsToRender}
             </table>

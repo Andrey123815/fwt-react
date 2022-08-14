@@ -7,11 +7,6 @@ export interface ISingleTheme {
     fontColor: string,
 }
 
-export interface IThemeContext {
-    theme: ISingleTheme,
-    toggleTheme: () => void
-}
-
 export const themes = {
     light: {
         themeName: 'light',
@@ -25,6 +20,11 @@ export const themes = {
         border: '#96969e',
         fontColor: '#db0f8d'
     }
+}
+
+export interface IThemeContext {
+    theme: ISingleTheme,
+    toggleTheme: () => void
 }
 
 export const ThemeContext = createContext<IThemeContext>({

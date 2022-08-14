@@ -16,7 +16,7 @@ class NewsPost extends Component<Props, {}> {
         let messagePart = booking ? 'забронировал площадку' : 'отменил бронирование площадки';
         return (
             <p>
-                <span className="news-post__date-time">{dateTime}</span> Игрок <a href="" className="news-post__player">{player}</a> &lt;<a href="" className="news-post__team">{team}</a>&gt; {messagePart} на улице {street}
+                <span className="news-post__date-time">{dateTime}</span>&nbsp;&nbsp;&nbsp;&nbsp; Игрок <a href="" className="news-post__player">{player}</a> &lt;<a href="" className="news-post__team">{team}</a>&gt; {messagePart} на улице {street}
             </p>
         );
     }

@@ -1,0 +1,32 @@
+.up-line {
+    display: flex;
+    flex-direction: row;
+
+    min-width: calc(100vw - 500px);
+}
+
+.up-line__info-lines {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.up-line__avatar-block {
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    justify-content: center;
+    border-bottom: 1px solid #db0f8d;
+    border-left: 1px solid  #db0f8d;
+    z-index: 1;
+    max-height: 90px;
+}
+
+.avatar-block__person-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.rank_veteran {
+    color: #ec6c15;
+}

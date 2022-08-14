@@ -46,11 +46,56 @@ class News extends Component<{}, States> {
                 street: 'Крымская, 4',
                 booking: true
             },
+            {
+                dateTime: '11.07 12:00',
+                player: 'MavelTrip',
+                team: 'TropRetto',
+                street: 'Крымская, 4',
+                booking: false,
+            },
+            {
+                dateTime: '11.07 12:00',
+                player: 'MavelTrip',
+                team: 'TropRetto',
+                street: 'Крымская, 4',
+                booking: false,
+            },
+            {
+                dateTime: '11.07 12:00',
+                player: 'MavelTrip',
+                team: 'TropRetto',
+                street: 'Крымская, 4',
+                booking: false,
+            },
+            {
+                dateTime: '11.07 12:00',
+                player: 'MavelTrip',
+                team: 'TropRetto',
+                street: 'Крымская, 4',
+                booking: false,
+            },
+            {
+                dateTime: '11.07 12:00',
+                player: 'MavelTrip',
+                team: 'TropRetto',
+                street: 'Крымская, 4',
+                booking: false,
+            },
+            {
+                dateTime: '11.07 12:00',
+                player: 'MavelTrip',
+                team: 'TropRetto',
+                street: 'Крымская, 4',
+                booking: false,
+            },
+            {
+                dateTime: '11.07 12:00',
+                player: 'MavelTrip',
+                team: 'TropRetto',
+                street: 'Крымская, 4',
+                booking: false,
+            },
 
-            // '11.07 12:00 Игрок MavelTrip(TropRetto) забронировал площадку на улице Крымская!',
-            // 'Игрок MavelTrip забронировал площадку на улице Крымская!',
-            // 'Игрок MavelTrip забронировал площадку на улице Крымская!',
-            // 'Игрок MavelTrip забронировал площадку на улице Крымская!'
         ]
         this.setState({ news: newsData });
     }
