@@ -20,6 +20,7 @@
     border-left: 1px solid  #db0f8d;
     z-index: 1;
     max-height: 90px;
+    cursor: pointer;
 }
 
 .avatar-block__person-info {
@@ -27,6 +28,14 @@
     flex-direction: column;
 }
 
-.rank_veteran {
+.person-info__nickname {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+}
+
+.person-info__rank_veteran {
     color: #ec6c15;
 }

@@ -3,8 +3,8 @@
     "rank": "Ветеран",
     "team": "Vortankier",
     "address": {
-        "city": "Moscow",
-        "street": "Fdw",
+        "city": "Раменское",
+        "street": "Крымская",
         "house": "4"
     },
     "schedule": [
@@ -24,7 +24,7 @@
             "place": "г.Раменское, ул.Крымская, дом 10",
             "team": "Favorite",
             "membersCountNow": 2,
-            "membersCountNeed": 6,
+            "membersCountNeed": 6
         },
         {
             "date": "2022, 1, 14",

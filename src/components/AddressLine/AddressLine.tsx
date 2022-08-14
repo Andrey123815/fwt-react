@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
 import './AddressLine.css';
+import {IUserContext, UserContext} from "../../configurations/UserConfigurations";
 
 class AddressLine extends Component<{}, {}> {
-    private readonly address: string;
-
-    constructor(props: Readonly<any>) {
-        super(props);
-        this.address = '';
-    }
+    context!: Readonly<IUserContext>;
+    static contextType = UserContext;
 
     render() {
+        const user = this.context.user;
         return (
             <div className="address-line">
-                Ваш адрес: {this.address}
+                Ваш адрес: г.{user.address.city}, ул.{user.address.street}, {user.address.house}
             </div>
         );
     }

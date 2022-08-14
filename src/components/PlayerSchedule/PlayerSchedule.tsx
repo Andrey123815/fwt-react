@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SchedulePoint from "../SchedulePoint/SchedulePoint";
 import './PlayerSchedule.css';
+import {IUserContext, UserContext} from "../../configurations/UserConfigurations";
 
 export interface ISchedulePoint {
     date: string,
@@ -25,71 +26,12 @@ class PlayerSchedule extends Component<{}, States> {
         };
     }
 
-    componentDidMount() {
-        // Запрос
-        const schedulePointsData = [
-            {
-                date: '2022, 1, 14',
-                startTime: '9, 0, 0, 0',
-                finishTime: '11, 0, 0, 0',
-                place: 'г.Раменское, ул.Крымская, дом 10',
-                team: 'Favorite',
-                membersCountNow: 1,
-                membersCountNeed: 6,
-            },
-            {
-                date: '2022, 1, 14',
-                startTime: '9, 0, 0, 0',
-                finishTime: '11, 0, 0, 0',
-                place: 'г.Раменское, ул.Крымская, дом 10',
-                team: 'Favorite',
-                membersCountNow: 2,
-                membersCountNeed: 6,
-            },
-            {
-                date: '2022, 1, 14',
-                startTime: '9, 0, 0, 0',
-                finishTime: '11, 0, 0, 0',
-                place: 'г.Раменское, ул.Крымская, дом 10',
-                team: 'Favorite',
-                membersCountNow: 3,
-                membersCountNeed: 6,
-            },
-            {
-                date: '2022, 1, 14',
-                startTime: '9, 0, 0, 0',
-                finishTime: '11, 0, 0, 0',
-                place: 'г.Раменское, ул.Крымская, дом 10',
-                team: 'Favorite',
-                membersCountNow: 4,
-                membersCountNeed: 6,
-            },
-            {
-                date: '2022, 1, 14',
-                startTime: '9, 0, 0, 0',
-                finishTime: '11, 0, 0, 0',
-                place: 'г.Раменское, ул.Крымская, дом 10',
-                team: 'Favorite',
-                membersCountNow: 5,
-                membersCountNeed: 6,
-            },
-            {
-                date: '2022, 1, 14',
-                startTime: '9, 0, 0, 0',
-                finishTime: '11, 0, 0, 0',
-                place: 'г.Раменское, ул.Крымская, дом 10',
-                team: 'Favorite',
-                membersCountNow: 6,
-                membersCountNeed: 6,
-            },
-        ];
-        this.setState({
-            schedulePoints: schedulePointsData
-        });
-    }
+    static contextType = UserContext;
+    context!: Readonly<IUserContext>;
 
     render() {
-        const schedulePointsToRender = this.state.schedulePoints.map((point) =>
+        const {schedule} = this.context.user;
+        const schedulePointsToRender = schedule.map((point) =>
             <SchedulePoint point={point} />
         )
         return (

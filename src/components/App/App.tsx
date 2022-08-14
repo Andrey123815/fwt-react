@@ -4,9 +4,8 @@ import SettingsBlock from "../SettingsBlock/SettingsBlock";
 import MainContentBlock from "../MainContentBlock/MainContentBlock";
 import {ISingleTheme, themes} from "../../configurations/ThemeConfigurations";
 import {ThemeContext} from "../../configurations/ThemeConfigurations";
-import {defaultUser, ISingleUser, UserContext} from "../../configurations/UserConfigurations";
-import fs from 'fs'
-// const fs = require('fs');
+import {ISingleUser, UserContext} from "../../configurations/UserConfigurations";
+import userData from '../../dataSource/user.json';
 
 interface States {
     theme: ISingleTheme,
@@ -39,24 +38,13 @@ class App extends Component<{}, States> {
 
         this.state = {
             theme: themes.dark,
-            user: defaultUser
+            user: userData
         };
     }
 
     componentDidMount() {
-        // const userData = fs.readFileSync('./dataSource/user.json');
-        // const userParsed: ISingleUser = JSON.parse(fs.readFileSync('./dataSource/user.json', 'utf-8'));
-        // console.log(userParsed.nickname);
-
-        // fetch("file:///home/andrey/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9%20%D1%81%D1%82%D0%BE%D0%BB/fwt-react/dataSource/user.json")
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log("data:", data)
-        //     })
-
-        // можно здесь сделать запрос на юзера
-        // можно здесь сделать запрос на адрес
-        // и передать через пропсы или HOC и передавать туда эти запросы в качестве selectedData
+        // Имитация запроса на юзера
+        // и передать через пропсы или HOC эти запросы в качестве selectedData
     }
 
     render() {
@@ -66,7 +54,7 @@ class App extends Component<{}, States> {
             <div className="app">
                 <div className={appTheme}>
                     <ThemeContext.Provider value={{ theme, toggleTheme: this.toggleTheme }}>
-                        <UserContext.Provider value={{ user: defaultUser, updateUserInfo: this.updateUserInfo }}>
+                        <UserContext.Provider value={{ user: userData, updateUserInfo: this.updateUserInfo }}>
                             <SettingsBlock />
                             <MainContentBlock />
                         </UserContext.Provider>

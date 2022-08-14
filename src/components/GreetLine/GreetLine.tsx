@@ -1,29 +1,20 @@
 import React, {Component} from 'react';
 import './GreetLine.css';
+import {IUserContext, UserContext} from "../../configurations/UserConfigurations";
 
 class GreetLine extends Component<{}, {}> {
-    private readonly user: string;
-
-    constructor(props: Readonly<any>) {
-        super(props);
-        this.user = "Player";
-    }
-
-    // componentDidMount() {
-    //     const userData: string | null = localStorage.getItem('isAuth');
-    //     let user: object;
-    //     if (typeof userData !== 'object') {
-    //         user = JSON.parse(userData);
-    //     }
-    // }
+    context!: Readonly<IUserContext>;
 
     render() {
+        const {nickname} = this.context.user;
         return (
             <div className="greet-line">
-                Welcome to the Football World Team, {this.user}!
+                Welcome to the Football World Team, {nickname}!
             </div>
         );
     }
 }
+
+GreetLine.contextType = UserContext;
 
 export default GreetLine;
