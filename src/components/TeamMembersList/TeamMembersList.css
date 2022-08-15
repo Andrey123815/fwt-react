@@ -1,0 +1,36 @@
+.team__page-preview {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.page-preview__team-name {
+    color: yellow;
+}
+
+.team__members-preview {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.team__members-list {
+    line-height: 40px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.team__members-list th:nth-child(1) {
+    width: 20%;
+}
+
+table.team__members-list th:nth-child(2) {
+    width: 30%;
+}
+
+table.team__members-list th:nth-child(3) {
+    width: 40%;
+}
+
+table.team__members-list th:nth-child(4) {
+    width: 42%;
+}

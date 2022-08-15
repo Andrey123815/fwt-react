@@ -19,7 +19,7 @@ class UpInfoLine extends Component<{}, {}> {
                     <img width="90px" height="90px" src="./profile_dark-theme.svg" alt="" />
                     <div className="avatar-block__person-info">
                         <div className="person-info__nickname">{user.nickname}</div>
-                        <div>Звание: <span className="person-info__rank_veteran">{user.rank}</span></div>
+                        <div>Звание: <span className="person-info__rank_veteran">[{user.rank}]</span></div>
                     </div>
                 </div>
             </div>

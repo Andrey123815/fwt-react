@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SchedulePoint from "../SchedulePoint/SchedulePoint";
 import './Schedule.css';
 import {IUserContext, UserContext} from "../../configurations/UserConfigurations";
+import {TAnchorClick} from "../DownContentLine/DownContentLine";
 
 export interface ISchedulePoint {
     date: string,
@@ -19,7 +20,8 @@ interface States {
 }
 
 interface Props {
-    onlyFreeTeams?: boolean
+    onlyFreeTeams?: boolean,
+    onTeamMembersClick: TAnchorClick
 }
 
 class Schedule extends Component<Props, States> {
@@ -40,23 +42,26 @@ class Schedule extends Component<Props, States> {
         const schedulePointsToRender = schedule
             .filter(point => this.props.onlyFreeTeams ? point.membersCountNow !== point.membersCountNeed : true)
             .map((point) =>
-            <SchedulePoint point={point} />
+            <SchedulePoint onTeamMembersClick={this.props.onTeamMembersClick} point={point} />
         )
         const schedulePreview = this.props.onlyFreeTeams
             ? "Расписание свободных команд"
             : "Ваше расписание на ближайшее время";
+
         return (
             <div className="schedule">
                 <div className="schedule__preview">{schedulePreview}</div>
                 <table>
-                    <tr>
-                        <th>День недели</th>
-                        <th>Дата матча</th>
-                        <th>Продолжительность матча</th>
-                        <th>Местоположения поля</th>
-                        <th>Команда</th>
-                        <th>Состав</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>День недели</th>
+                            <th>Дата матча</th>
+                            <th>Продолжительность матча</th>
+                            <th>Местоположения поля</th>
+                            <th>Команда</th>
+                            <th>Состав</th>
+                        </tr>
+                    </thead>
                     {schedulePointsToRender}
                 </table>
             </div>
